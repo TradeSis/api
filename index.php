@@ -1,9 +1,5 @@
 <?php
-<<<<<<< Updated upstream
-/*VERSAO ts/api 22/02/2022 */
-=======
 /*VERSAO ts/api 22/02/2022 x1*/
->>>>>>> Stashed changes
 
 
 //header
