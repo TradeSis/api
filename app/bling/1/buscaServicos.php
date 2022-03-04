@@ -1,5 +1,6 @@
 <?php
 
+  $empresa    = "TRADESIS";
 
   $outputType = "json";
   
@@ -46,12 +47,20 @@
 //          echo "\n".$notaservico->cliente["nome"];
 //          echo "\n".$notaservico->dataEmissao;
 //          echo "\n".$notaservico->valorNota;
+
+
           $retornoParametros[$vi] = array(
-            "numeroNFSe"  => $notaservico->numeroNFSe,
-            "cliente"     => $notaservico->cliente["nome"],
-            "clienteCNPJ" => $notaservico->cliente["cnpj"],
-            "dataEmissao" => $notaservico->dataEmissao,
-            "valorNota"   => $notaservico->valorNota);
+            "empresa"       => $empresa,
+            "tipoVenda"     => "SERVICO",
+            "clienteCodigo" => $notaservico->cliente["cnpj"],
+            "clienteNome"   => $notaservico->cliente["nome"],
+            "dataVenda"     => $notaservico->dataEmissao,
+            "numeroNF"      => $notaservico->numeroNFSe,
+            "statusNF"      => $notaservico->situacao,
+            "qtdVenda"      => 1,
+            "valorNota"   => $notaservico->valorNota,
+            "valorCusto"      => 0,
+          );
           $vi = $vi + 1;
         }
           $jsonSaida     = array(
